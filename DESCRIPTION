@@ -1,0 +1,22 @@
+Package: PUGMM
+Title: Parsimonious Ultrametric Gaussian Mixture Models for Model-Based Clustering with Ultrametric Covariance Structure
+Version: 0.0.0.9000
+Description: Parsimonious Ultrametric Gaussian Mixture Models via the grouped coordinate ascent (equivalent to EM) algorithm characterized by the inspection of hierarchical relationships among variables via parsimonious extended ultrametric covariance structures.
+License: GPL (>= 2)
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+Imports:
+    ClusterR,
+    doParallel,
+    foreach,
+    HDclassif,
+    igraph,
+    MASS,
+    Matrix,
+    mclust,
+    mcompanion,
+    ppclust
