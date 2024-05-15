@@ -1,0 +1,23 @@
+Package: PUGMM
+Version: 0.1.0
+Title: Parsimonious Ultrametric Gaussian Mixture Models
+Description: Finite Gaussian mixture models with parsimonious extended ultrametric covariance structures estimated via a grouped coordinate ascent algorithm, which is equivalent to the Expectation-Maximization algorithm. The thirteen ultrametric covariance structures implemented allow for the inspection of different hierarchical relationships among variables. The estimation of an ultrametric correlation matrix is included as a function. The methodologies are described in Cavicchia, Vichi, Zaccaria (2024) <doi:10.1007/s11222-024-10405-9>, Cavicchia, Vichi, Zaccaria (2022) <doi:10.1007/s11634-021-00488-x> and Cavicchia, Vichi, Zaccaria (2020) <doi:10.1007/s11634-020-00400-z>.
+Authors@R: 
+    c(person("Giorgia", "Zaccaria", , "giorgia.zaccaria@unimib.it", role = c("aut", "cre"), comment = c(ORCID = "0000-0001-9119-9104")),
+    person("Carlo", "Cavicchia", , "cavicchia@ese.eur.nl", role = c("aut"), comment = c(ORCID = "0000-0003-1816-3521")),
+    person("Lorenzo", "Balzotti", , "lorenzo.balzotti@uniroma1.it", role = c("aut"), comment = c(ORCID = "0000-0001-6191-9801")))
+Depends: R (>= 4.0)
+Imports: ClusterR, doParallel, foreach, igraph, MASS, Matrix, mclust,
+        mcompanion, ppclust
+License: MIT + file LICENSE
+URL: https://github.com/giorgiazaccaria/PUGMM
+BugReports: https://github.com/giorgiazaccaria/PUGMM/issues
+NeedsCompilation: no
+LazyData: yes
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.1
+Maintainer: Giorgia Zaccaria <giorgia.zaccaria@unimib.it>
+
+
+
