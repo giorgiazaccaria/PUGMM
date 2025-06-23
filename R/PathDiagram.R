@@ -1,4 +1,10 @@
 PathDiagram <- function (p, m, V, outV, A, B, levfus, Sb, Sw, Sv, g, column_names = NULL, cluster_names = NULL) {
+  if (!is.null(column_names)) {
+    group_assignments <- apply(V, 1, function(row) which(row == 1))
+    df <- data.frame(name = column_names, group = group_assignments)
+    df$group <- factor(df$group, levels = outV)
+    column_names <- df[order(df$group), "name"]
+  }
   nnode <- (m * 2) - 1 + p
   fnode <- m + p
 
