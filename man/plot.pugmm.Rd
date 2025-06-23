@@ -22,9 +22,6 @@
 
 \item{...}{Other graphics parameters.}
 }
-\value{
-No return value since this is a plot method.
-}
 \description{
 Plots for Parsimonious Ultrametric Gaussian Mixture Models results, such as BIC and path diagrams.
 }

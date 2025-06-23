@@ -6,9 +6,6 @@
 \usage{
 pugmm_available_models()
 }
-\value{
-Available models in PUGMM, i.e., the thirteen extended ultrametric covariance structures of PUGMM.
-}
 \description{
 Description  of the model names used in the \emph{PUGMM} package.
 }

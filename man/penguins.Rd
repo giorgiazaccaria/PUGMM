@@ -15,7 +15,7 @@ A data frame with 342 observations and 5 variables, which are described as follo
 }
 }
 \source{
-Dataset downloaded from Kaggle \href{https://www.kaggle.com/code/parulpandey/penguin-dataset-the-new-iris}{https://www.kaggle.com/code/parulpandey/penguin-dataset-the-new-iris}.
+Dataset downloaded from Kaggle \url{https://www.kaggle.com/code/parulpandey/penguin-dataset-the-new-iris}.
 }
 \usage{
 data(penguins)

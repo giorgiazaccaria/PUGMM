@@ -31,9 +31,9 @@ pugmm(
 
 \item{model}{Vector of character strings indicating the model names to be fitted. If \code{NULL}, all the possible models are fitted (default). See the possible models using \code{available_models()}.}
 
-\item{maxiter}{Integer value specifying the maximum number of iterations of the algorithm (default: \code{maxiter = 500}).}
+\item{maxiter}{Integer value specifying the maximum number of iterations of the EM algorithm (default: \code{maxiter = 500}).}
 
-\item{tol}{Numeric value specifying the tolerance for the convergence criterion (default: \code{tol = 1e-6}).}
+\item{tol}{Numeric value specifying the tolerance for the convergence criteria used in the EM algorithm (default: \code{tol = 1e-6}).}
 
 \item{stop}{Character string specifying the convergence criteria. If "aitken", the Aitken acceleration-based stopping rule is used (default); if "relative", the relative log-likelihood in two sequential iterations is evaluated.}
 
@@ -104,14 +104,14 @@ An object of class \code{pugmm} containing the results of the optimal - accordin
 Model-based clustering via Parsimonious Ultrametric Gaussian Mixture Models. Hierarchical relationships among variables within and between clusters are inspected. The grouped coordinate ascent algorithm is used for the parameter estimation. The optimal model is selected according to BIC.
 }
 \details{
-The grouped coordinate ascent algorithm used for the estimation of PUGMMs parameters was demonstrated to be equivalent to an Expectation-Maximization algorithm in the GMM framework (Hathaway, 1986).
+The grouped coordinate ascent algorithm used for the estimation of PUGMMs parameters was demonstrated to be equivalent to an Expectation-Maximization (EM) algorithm in the GMM framework (Hathaway, 1986).
 }
 \examples{
 data(penguins)
 x <- scale(penguins[, 2:5])
 pugmm.penguins <- pugmm(x, 3, 1)
 table(penguins$species, pugmm.penguins$label)
-\donttest{
+\dontrun{
 pugmm.penguins <- pugmm(x)
 pugmm.penguins$G
 pugmm.penguins$m
