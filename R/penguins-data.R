@@ -22,7 +22,7 @@
 #'
 #' @references Gorman, K.B., Williams T.D., Fraser W.R. (2014). Ecological sexual dimorphism and environmental variability within a community of Antarctic penguins (genus Pygoscelis). \emph{PLoS ONE}, 9(3), e90081.
 #'
-#' @source Dataset downloaded from Kaggle \href{https://www.kaggle.com/code/parulpandey/penguin-dataset-the-new-iris}{https://www.kaggle.com/code/parulpandey/penguin-dataset-the-new-iris}.
+#' @source Dataset downloaded from Kaggle <https://www.kaggle.com/code/parulpandey/penguin-dataset-the-new-iris>.
 
 #' @examples
 #' data(penguins)

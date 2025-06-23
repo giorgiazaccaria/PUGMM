@@ -391,8 +391,6 @@ loglikH_F_pugmm <-
 #' @description
 #' Description  of the model names used in the \emph{PUGMM} package.
 #'
-#' @return Available models in PUGMM, i.e., the thirteen extended ultrametric covariance structures of PUGMM.
-#'
 #' @details
 #' The PUGMM model names in the \emph{PUGMM} package are characterized by four letters:
 #' \itemize{

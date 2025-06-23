@@ -6,8 +6,8 @@
 #' @param m Integer (vector) specifying the number of variable groups (default: `m = 1:5`).
 #' @param normalization Character string specifying the data transformation. If `NULL`, no transformation is applied to the data matrix (default). Other options are: "standard" for the standardization; "center" for centering the data; "range" for the MinMax transformation; "SVD" for the Singular Value Decomposition transformation.
 #' @param model Vector of character strings indicating the model names to be fitted. If `NULL`, all the possible models are fitted (default). See the possible models using `available_models()`.
-#' @param maxiter Integer value specifying the maximum number of iterations of the algorithm (default: `maxiter = 500`).
-#' @param tol Numeric value specifying the tolerance for the convergence criterion (default: `tol = 1e-6`).
+#' @param maxiter Integer value specifying the maximum number of iterations of the EM algorithm (default: `maxiter = 500`).
+#' @param tol Numeric value specifying the tolerance for the convergence criteria used in the EM algorithm (default: `tol = 1e-6`).
 #' @param stop Character string specifying the convergence criteria. If "aitken", the Aitken acceleration-based stopping rule is used (default); if "relative", the relative log-likelihood in two sequential iterations is evaluated.
 #' @param rndstart Integer value specifying the number of random starts (default: `rndstart = 1`).
 #' @param initG Character string specifying the method for the initialization of the unit-component membership. If "kmeans", k-means via RcppArmadillo is used (default). Other options are: "random" for random assignment; "kmeansf" for fuzzy c-means (via the function fcm of the package ppclust).
@@ -42,7 +42,7 @@
 #' @return `model.name` Character string denoting the PUGMM model name of the best model among the ones fitted.
 #' @return `messages` Messages.
 #' @details
-#' The grouped coordinate ascent algorithm used for the estimation of PUGMMs parameters was demonstrated to be equivalent to an Expectation-Maximization algorithm in the GMM framework (Hathaway, 1986).
+#' The grouped coordinate ascent algorithm used for the estimation of PUGMMs parameters was demonstrated to be equivalent to an Expectation-Maximization (EM) algorithm in the GMM framework (Hathaway, 1986).
 #' @references Cavicchia, C., Vichi, M., Zaccaria, G. (2024) Parsimonious ultrametric Gaussian mixture models. \emph{Statistics and Computing}, 34, 108.
 #' @references Cavicchia, C., Vichi, M., Zaccaria, G. (2022) Gaussian mixture model with an extended ultrametric covariance structure. \emph{Advances in Data Analysis and Classification}, 16(2), 399-427.
 #' @references Hathaway, R. (1986) Another interpretation of the EM algorithm for mixture distributions. \emph{Statistics and Probability Letters}, 4(2), 53-56.
@@ -52,7 +52,7 @@
 #' x <- scale(penguins[, 2:5])
 #' pugmm.penguins <- pugmm(x, 3, 1)
 #' table(penguins$species, pugmm.penguins$label)
-#' \donttest{
+#' \dontrun{
 #' pugmm.penguins <- pugmm(x)
 #' pugmm.penguins$G
 #' pugmm.penguins$m
@@ -216,6 +216,7 @@ pugmm <-
         foreach::foreach(
           i = 1:w,
           .inorder = TRUE,
+          .export = ".GlobalEnv",
           .packages = c("PUGMM")
         ) %dopar% {
           pugmm_case(
@@ -329,7 +330,7 @@ pugmm <-
 
 
     if (bic == -Inf) {
-      warning("The solution has a number of clusters < G. The user can run the model with a reduced number of clusters.")
+      print("The solution has a number of clusters < G. The user can run the model with a reduced number of clusters.")
     }
 
     ans <- c(
