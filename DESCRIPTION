@@ -1,0 +1,29 @@
+Package: PUGMM
+Version: 0.1.2
+Title: Parsimonious Ultrametric Gaussian Mixture Models
+Description: Parsimonious Ultrametric Gaussian Mixture Models via grouped coordinate ascent (equivalent to EM) algorithm characterized by the inspection of hierarchical relationships among variables via parsimonious extended ultrametric covariance structures. The methodologies are described in Cavicchia, Vichi, Zaccaria (2024) <doi:10.1007/s11222-024-10405-9>, (2022) <doi:10.1007/s11634-021-00488-x> and (2020) <doi:10.1007/s11634-020-00400-z>.
+Authors@R: 
+    c(person("Giorgia", "Zaccaria", , "giorgia.zaccaria@unimib.it", role = c("aut", "cre"), comment = c(ORCID = "0000-0001-9119-9104")),
+    person("Carlo", "Cavicchia", , "cavicchia@ese.eur.nl", role = c("aut"), comment = c(ORCID = "0000-0003-1816-3521")),
+    person("Lorenzo", "Balzotti", , "lorenzo.balzotti@uniroma1.it", role = c("aut"), comment = c(ORCID = "0000-0001-6191-9801")),
+    person("Alexa A.", "Sochaniwsky", , "sochaa1@mcmaster.ca", role = c("aut"), comment = c(ORCID = "0009-0005-8043-5091")),
+    person("Paul D.", "McNicholas", , "mcnicholas@math.mcmaster.ca", role = c("aut"), comment = c(ORCID = "0000-0002-2482-523X")))
+Depends: R (>= 4.0)
+Imports: ClusterR, doParallel, foreach, igraph, ManlyMix, MASS, Matrix,
+        mclust, mcompanion, ppclust, Rcpp
+License: MIT + file LICENSE
+URL: https://github.com/giorgiazaccaria/PUGMM
+BugReports: https://github.com/giorgiazaccaria/PUGMM/issues
+LazyData: true
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.3
+Author: Giorgia Zaccaria [aut, cre] (<https://orcid.org/0000-0001-9119-9104>),
+  Carlo Cavicchia [aut] (<https://orcid.org/0000-0003-1816-3521>),
+  Lorenzo Balzotti [aut] (<https://orcid.org/0000-0001-6191-9801>),
+  Alexa A. Sochaniwsky [aut] (<https://orcid.org/0009-0005-8043-5091>),
+  Paul D.McNicholas [aut] (<https://orcid.org/0000-0002-2482-523X>)
+Maintainer: Giorgia Zaccaria <giorgia.zaccaria@unimib.it>
+NeedsCompilation: yes
+LinkingTo: Rcpp
+
